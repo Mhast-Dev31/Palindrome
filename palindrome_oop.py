@@ -7,7 +7,7 @@ class PalindromeChecker:
         return clean == clean[::-1]
 
 
-class FileHandler:
+class FileProcessor:
     def __init__(self, filename: str):
         self.filename = filename
 
@@ -24,7 +24,7 @@ class FileHandler:
             print(result)
 
 
-class Program:
+class Application:
     def __init__(self, default_file="test_data.txt"):
         self.default_file = default_file
 
@@ -33,17 +33,17 @@ class Program:
         filename = self.default_file
 
         try:
-            processor = FileHandler(filename) 
+            processor = FileProcessor(filename) 
             processor.process_file(checker)
         except FileNotFoundError:
             filename = input(f"{self.default_file} not found. Enter filename: ")
             try:
-                processor = FileHandler(filename)
+                processor = FileProcessor(filename)
                 processor.process_file(checker)
             except FileNotFoundError:
                 print("Error: File not found. Exiting program.")
 
 
 if __name__ == "__main__":
-    app = Program()
+    app = Application()
     app.run()
