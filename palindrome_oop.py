@@ -28,7 +28,7 @@ class FileHandler:
             print(result)
 
 
-class Application:
+class Program:
     def __init__(self, default_file="test_data.txt"):
         self.default_file = default_file
 
@@ -49,5 +49,5 @@ class Application:
 
 
 if __name__ == "__main__":
-    app = Application()
+    app = Program()
     app.run()
