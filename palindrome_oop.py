@@ -1,10 +1,8 @@
 class PalindromeChecker:
     def cleaned(self, text: str) -> str:
-        """Remove spaces, lowercase the text, and strip edges."""
         return text.strip().lower().replace(" ", "")
 
     def is_palindrome(self, text: str) -> bool:
-        """Check if a string is a palindrome."""
         clean = self.cleaned(text)
         return clean == clean[::-1]
 
@@ -14,7 +12,6 @@ class FileHandler:
         self.filename = filename
 
     def read_lines(self):
-        """Yield one line at a time from the file."""
         with open(self.filename, "r") as file:
             for line in file:
                 line = line.strip()
@@ -22,7 +19,6 @@ class FileHandler:
                     yield line
 
     def process_file(self, checker: PalindromeChecker):
-        """Check each line in the file using PalindromeChecker."""
         for line in self.read_lines():
             result = checker.is_palindrome(line)
             print(result)
