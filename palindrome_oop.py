@@ -29,7 +29,7 @@ class FileHandler:
 
 
 class Application:
-    def __init__(self, default_file="data.txt"):
+    def __init__(self, default_file="test_data.txt"):
         self.default_file = default_file
 
     def run(self):
